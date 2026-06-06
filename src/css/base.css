@@ -1,7 +1,17 @@
 :root {
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -29,4 +39,197 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+/* ================= Общие стили страницы ================= */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  color: #2e2f42;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+main {
+  max-width: 1128px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= Форма поиска ================= */
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Состояния инпута из Figma (states) */
+.form input:hover {
+  border-color: #000000;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form input::placeholder {
+  color: #808080;
+}
+
+.form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  min-width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Состояния кнопки (Start/Search) */
+.form button:hover {
+  background-color: #6c8cff;
+}
+
+/* ================= Сетка Галереи ================= */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  row-gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: calc((100% - 48px) / 3); /* 3 колонки с учетом gap 24px */
+  border: 1px solid #808080;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-link {
+  display: block;
+  overflow: hidden;
+  height: 200px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-link:hover .gallery-image {
+  transform: scale(1.03);
+}
+
+/* ================= Блок инфо под картинкой ================= */
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #808080;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.info-item b {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #2e2f42;
+}
+
+.info-item span {
+  font-size: 12px;
+  line-height: 2;
+  color: #2e2f42;
+}
+
+/* ================= CSS-Лоадер (Индикатор загрузки) ================= */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #4e75ff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 20px auto;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}
+/* Кнопка Load More */
+.load-more-btn {
+  display: block;
+  margin: 32px auto;
+  padding: 8px 20px;
+  min-width: 120px;
+  height: 40px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more-btn:hover {
+  background-color: #6c8cff;
 }

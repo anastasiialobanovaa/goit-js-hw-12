@@ -1,22 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Homework 12 - Pagination</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+      <form class="form">
+        <input
+          type="text"
+          name="search-text"
+          placeholder="Search images..."
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
 
-    <load src="./partials/footer.html" />
+      <!-- Контейнер галереи -->
+      <ul class="gallery"></ul>
+
+      <!-- Блок управления загрузкой (Кнопка и Лоадер) -->
+      <button type="button" class="load-more-btn is-hidden">Load more</button>
+      <span class="loader is-hidden"></span>
+    </main>
 
     <script type="module" src="./main.js"></script>
   </body>
